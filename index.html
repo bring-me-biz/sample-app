@@ -1,17 +1,28 @@
 <html>
-   <head>
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-       <style>
-           img {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-           }
-       </style>
-   </head>
-   <body style="background-color:#1565c0;">
-       <script src="../lib/microapp.js"></script>
-       <script>sayHello()</script>
-       <img src="logo.png" style="width:72px;"/>
-   </body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body style="background-color:#1565c0;">
+<script src="../lib/microapp.js"></script>
+<img src="logo.png" style="width:72px;"/>
+<form>
+    <label for="name">Name:</label>
+    <input id="name" name="name" required>
+
+    <label for="surname">Surname:</label>
+    <input id="surname" name="surname" required>
+
+    <input type="checkbox" required id="tandcs" name="tandcs"><label for="tandcs">Do you agree to the terms and
+    conditions?</label>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
 </html>
