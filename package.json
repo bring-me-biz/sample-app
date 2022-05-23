@@ -1,0 +1,19 @@
+{
+  "name": "sample-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bring-me-biz/sample-app.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/bring-me-biz/sample-app/issues"
+  },
+  "homepage": "https://github.com/bring-me-biz/sample-app#readme"
+}
