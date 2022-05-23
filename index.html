@@ -7,6 +7,10 @@
             margin-left: auto;
             margin-right: auto;
         }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body style="background-color:#1565c0;">
@@ -19,8 +23,10 @@
     <label for="surname">Surname:</label>
     <input id="surname" name="surname" required>
 
-    <input type="checkbox" required id="tandcs" name="tandcs"><label for="tandcs">Do you agree to the terms and
+    <div>
+        <input type="checkbox" required id="tandcs" name="tandcs"><label for="tandcs">Do you agree to the terms and
     conditions?</label>
+    </div>
 
     <input type="hidden" name="product_id" id="product_id" value="222">
     <input type="hidden" name="affiliate_id" id="affiliate_id" value="0">
