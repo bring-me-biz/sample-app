@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/bring-me-biz/sample-app/issues"
   },
-  "homepage": "https://github.com/bring-me-biz/sample-app#readme"
+  "homepage": "https://github.com/bring-me-biz/sample-app#readme",
+  "dependencies": {}
 }
