@@ -51,7 +51,8 @@
         input.value = msisdn;
     }
     consoletodiv('logger')
-    console.log('Cellphone Number:', Ayoba.GetMsisdn());
+    console.log('Ayoba Keys:', Object.keys(Ayoba).join('\n'));
+    console.log('GetMsisdn type:', typeof Ayoba.GetMsisdn);
     getMsisdn();
 </script>
 </body>
