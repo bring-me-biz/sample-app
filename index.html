@@ -46,13 +46,12 @@
 </form>
 <script>
     function getMsisdn() {
-        var msisdn = Ayoba.GetMsisdn();
+        var msisdn = Ayoba.getMsisdn();
         var input = document.querySelector('#cellphone');
         input.value = msisdn;
     }
     consoletodiv('logger')
-    console.log('Ayoba Keys:\n', Object.keys(Ayoba).join('\n'));
-    console.log('GetMsisdn type:', typeof Ayoba['GetMsisdn']);
+    console.log('Msisdn: ', Ayoba.getMsisdn());
     getMsisdn();
 </script>
 </body>
