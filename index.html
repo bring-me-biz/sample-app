@@ -47,7 +47,7 @@
 <script>
 
     function defer(method) {
-        if (Ayoba && Ayoba.getMsisdn) {
+        if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
             method();
         } else {
             setTimeout(function () {
