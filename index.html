@@ -48,13 +48,19 @@
     var count = 1;
     function defer(method) {
         console.log('defer called: ', count++);
-        if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
+       try {
+            if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
+            console.log('Ayoba loaded...');
             method();
         } else {
+            console.log('Ayoba not read yet...');
             setTimeout(function () {
                 defer(method)
             }, 50);
         }
+       } catch (e) {
+           console.log('An error occurred', e.message);
+       }
     }
 
     defer(function () {
