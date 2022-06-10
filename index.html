@@ -45,6 +45,8 @@
     <button id="submit" type="submit">Submit</button>
 </form>
 <script>
+    consoletodiv('logger')
+    console.log('Logger loaded...')
     window.onload = function () {
         function defer(method) {
             if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
@@ -63,7 +65,7 @@
                 input.value = msisdn;
             }
 
-            consoletodiv('logger')
+
             console.log(Object.getOwnPropertyNames(Ayoba).join(', '))
             console.log('Msisdn: ');
             console.log(Ayoba.getMsisdn())
