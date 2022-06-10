@@ -49,7 +49,7 @@
     function defer(method) {
         console.log('defer called: ', count++);
        try {
-            if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
+            if (Ayoba && Ayoba.hasOwnProperty('getMsisdn') && Ayoba.getMsisdn()) {
             console.log('Ayoba loaded...');
             method();
         } else {
