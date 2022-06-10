@@ -36,7 +36,7 @@
 
     <input type="hidden" name="cellphone" id="cellphone">
 
-    <div class="scroller" style="overflow: auto; height: 300px;">
+    <div class="scroller" style="overflow: scroll; height: 600px;">
         <pre id="logger" style="text-transform:capitalize; background-color: #f5f5f5; margin-bottom: 0;"></pre>
     </div>
 
@@ -46,6 +46,7 @@
     consoletodiv('logger')
     console.log('Logger loaded...')
     window.onload = function () {
+        console.log('Window loaded...');
         function defer(method) {
             if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
                 method();
