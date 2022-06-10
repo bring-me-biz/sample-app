@@ -45,32 +45,31 @@
 <script>
     consoletodiv('logger')
     console.log('Logger loaded...')
-    window.onload = function () {
-        console.log('Window loaded...');
-        function defer(method) {
-            if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
-                method();
-            } else {
-                setTimeout(function () {
-                    defer(method)
-                }, 50);
-            }
+    var count = 1;
+    function defer(method) {
+        console.log('defer called: ', count++);
+        if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
+            method();
+        } else {
+            setTimeout(function () {
+                defer(method)
+            }, 50);
+        }
+    }
+
+    defer(function () {
+        function getMsisdn() {
+            var msisdn = Ayoba.getMsisdn();
+            var input = document.querySelector('#cellphone');
+            input.value = msisdn;
         }
 
-        defer(function () {
-            function getMsisdn() {
-                var msisdn = Ayoba.getMsisdn();
-                var input = document.querySelector('#cellphone');
-                input.value = msisdn;
-            }
 
-
-            console.log(Object.getOwnPropertyNames(Ayoba).join(', '))
-            console.log('Msisdn: ');
-            console.log(Ayoba.getMsisdn())
-            getMsisdn();
-        })
-    }
+        console.log(Object.getOwnPropertyNames(Ayoba).join(', '))
+        console.log('Msisdn: ');
+        console.log(Ayoba.getMsisdn())
+        getMsisdn();
+    })
 
 </script>
 </body>
