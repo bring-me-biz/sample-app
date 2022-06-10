@@ -45,29 +45,31 @@
     <button id="submit" type="submit">Submit</button>
 </form>
 <script>
-
-    function defer(method) {
-        if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
-            method();
-        } else {
-            setTimeout(function () {
-                defer(method)
-            }, 50);
+    window.onload = function () {
+        function defer(method) {
+            if (Ayoba && Ayoba.getMsisdn && Ayoba.getMsisdn()) {
+                method();
+            } else {
+                setTimeout(function () {
+                    defer(method)
+                }, 50);
+            }
         }
+
+        defer(function () {
+            function getMsisdn() {
+                var msisdn = Ayoba.getMsisdn();
+                var input = document.querySelector('#cellphone');
+                input.value = msisdn;
+            }
+
+            consoletodiv('logger')
+            console.log('Msisdn: ');
+            console.log(Ayoba.getMsisdn())
+            getMsisdn();
+        })
     }
 
-    defer(function () {
-        function getMsisdn() {
-            var msisdn = Ayoba.getMsisdn();
-            var input = document.querySelector('#cellphone');
-            input.value = msisdn;
-        }
-
-        consoletodiv('logger')
-        console.log('Msisdn: ');
-        console.log(Ayoba.getMsisdn())
-        getMsisdn();
-    })
 </script>
 </body>
 </html>
