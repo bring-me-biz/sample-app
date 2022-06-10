@@ -13,11 +13,11 @@
             flex-direction: column;
         }
     </style>
-    <script src="./lib/static.js"></script>
+    <script src="static.js"></script>
 
 </head>
 <body style="background-color:#fff;">
-<script src="./lib/microapp.js"></script>
+<script src="microapp.js"></script>
 <img src="logo.png" style="width:72px;"/>
 <form method="post" action="https://bmb-ayoba-api.ey.r.appspot.com">
     <label for="name">Name:</label>
@@ -36,9 +36,7 @@
 
     <input type="hidden" name="cellphone" id="cellphone">
 
-    <br>
-    <br>
-    <div class="scroller" style="overflow: auto; height: 100px;">
+    <div class="scroller" style="overflow: auto; height: 300px;">
         <pre id="logger" style="text-transform:capitalize; background-color: #f5f5f5; margin-bottom: 0;"></pre>
     </div>
 
