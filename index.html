@@ -63,6 +63,10 @@
        }
     }
 
+    function onPresenceChanged(presence) {
+        console.log("Event: presence changed:" + presence)
+    }
+
     defer(function () {
         function getMsisdn() {
             var msisdn = Ayoba.getMsisdn();
