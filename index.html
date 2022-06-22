@@ -27,29 +27,27 @@
     <input type="hidden" name="cellphoneNumber" value="{{cellphoneNumber}}">
 
     <br>
-    <br>
     <label>Name</label>
     <input type="text" name="firstname" placeholder="Name" required>
 
-    <br>
     <br>
     <label>Surname</label>
     <input type="text" name="surname" placeholder="Surname" required>
 
     <br>
-    <br>
     <label>ID Number</label>
     <input type="text" name="idNumber" pattern="[0-9]{13}" placeholder="ID Number" required>
 
     <br>
-    <br>
     <label>Income Level</label>
-    <select name="incomeLevel" required>
-        <option></option>
-        <option value="<3500">Less than R3500</option>
-        <option value="3500to6000">Between R3500 and R6000</option>
-        <option value=">6000">More than R6000</option>
-    </select>
+    <input id="under3500" type="radio" name="incomeLevel" value="<3500">
+    <label for="under3500">Less than R3500</label>
+
+    <input id="between3000And6000" type="radio" name="incomeLevel" value="3500to6000">
+    <label for="between3000And6000">Between R3500 and R6000</label>
+
+    <input id="moreThan6000" type="radio" name="incomeLevel" value=">6000">
+    <label for="moreThan6000">More than R6000</label>
 
     <br>
     <br>
