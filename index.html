@@ -46,13 +46,18 @@
     consoletodiv('logger')
     console.log('Logger loaded...')
     var count = 1;
+    var skipDefer = false;
 
     function defer(method) {
         console.log('defer called: ', count++);
+        if (skipDefer) {
+            return;
+        }
         try {
             if (Ayoba && Ayoba.hasOwnProperty('getMsisdn') && Ayoba.getMsisdn()) {
                 console.log('Ayoba loaded...');
                 method();
+                skipDefer = true;
             } else {
                 console.log('Ayoba not read yet...');
                 setTimeout(function () {
@@ -61,6 +66,9 @@
             }
         } catch (e) {
             console.log('An error occurred', e.message);
+            setTimeout(function () {
+                defer(method)
+            }, 50);
         }
     }
 
