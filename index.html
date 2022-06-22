@@ -13,23 +13,88 @@
             flex-direction: column;
         }
     </style>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
     <script src="static.js"></script>
 
 </head>
 <body style="background-color:#fff;">
 <script src="microapp.js"></script>
-<img src="logo.png" style="width:72px;"/>
+<div class="logo-box">
+    <img class="logo" src="logo.png" alt="1life"/>
+</div>
 <form method="post" action="https://bmb-ayoba-api.ey.r.appspot.com">
-    <label for="name">Name:</label>
-    <input id="name" name="name" required>
+    <h1>Funeral Cover</h1>
+    <input type="hidden" name="cellphoneNumber" value="{{cellphoneNumber}}">
 
-    <label for="surname">Surname:</label>
-    <input id="surname" name="surname" required>
+    <br>
+    <br>
+    <label>Name</label>
+    <input type="text" name="firstname" placeholder="Name" required>
 
-    <div>
-        <input type="checkbox" required id="tandcs" name="tandcs"><label for="tandcs">Do you agree to the terms and
-        conditions?</label>
-    </div>
+    <br>
+    <br>
+    <label>Surname</label>
+    <input type="text" name="surname" placeholder="Surname" required>
+
+    <br>
+    <br>
+    <label>ID Number</label>
+    <input type="text" name="idNumber" pattern="[0-9]{13}" placeholder="ID Number" required>
+
+    <br>
+    <br>
+    <label>Income Level</label>
+    <select name="incomeLevel" required>
+        <option></option>
+        <option value="<3500">Less than R3500</option>
+        <option value="3500to6000">Between R3500 and R6000</option>
+        <option value=">6000">More than R6000</option>
+    </select>
+
+    <br>
+    <br>
+    <input type="checkbox" id="contact" name="contactAgree" required><label for="contact">I agree to be contacted
+    with more information from a 1Life Consultant.</label>
+    <br>
+    <br>
+    <input type="checkbox" id="tAndCs" name="tAndCsAgree" required><label for="tAndCs">I agree toTerms and Conditions and Privacy
+    Policy.</label>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+    <br>
+    <br>
+    <ul class="explain">
+        <li><strong>Pay-outs of up to R50 000</strong>
+            <ul>
+                <li>Policies pay out between R5 000 and R50 000 per member.</li>
+            </ul>
+        </li>
+        <li><strong>Hassle-free claims</strong>
+            <ul>
+                <li>We settle qualifying claims in as little as 3 minutes.</li>
+            </ul>
+        </li>
+        <li><strong>Fixed premiums</strong>
+            <ul>
+                <li>No increases, guaranteed, for the first 12 months.</li>
+            </ul>
+        </li>
+        <li><strong>Cover for extended family</strong>
+            <ul>
+                <li>You can insure up to 16 family members on one policy.</li>
+            </ul>
+        </li>
+        <li><strong>Policy benefits</strong>
+            <ul>
+                <li>Benefits include a R5 000 memorial and R6 000 grocery benefit plus a repatriation service.</li>
+            </ul>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <p class="footer">Premiums are risk profile dependent and subject to annual review. Licensed Life Insurer & FSP.
+        Ts and Cs online.</p>
 
     <input type="hidden" name="product_id" id="product_id" value="229">
     <input type="hidden" name="affiliate_id" id="affiliate_id" value="34">
