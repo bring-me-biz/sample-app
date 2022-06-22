@@ -70,7 +70,7 @@
     </div>
     <br>
     <br>
-    <button type="submit">Submit</button>
+    <button id="submit" type="submit">Submit</button>
     <br>
     <br>
     <ul class="explain">
@@ -113,12 +113,6 @@
     <input type="hidden" name="currentUrl" id="currentUrl">
     <input type="hidden" name="successRedirect" id="successRedirect">
     <input type="hidden" name="failedRedirect" id="failedRedirect">
-
-    <div class="scroller" style="overflow: scroll; height: 600px;">
-        <pre id="logger" style="text-transform:capitalize; background-color: #f5f5f5; margin-bottom: 0;"></pre>
-    </div>
-
-    <button id="submit" type="submit">Submit</button>
 </form>
 <script>
     consoletodiv('logger')
