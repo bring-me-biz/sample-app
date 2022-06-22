@@ -46,41 +46,40 @@
     consoletodiv('logger')
     console.log('Logger loaded...')
     var count = 1;
+
     function defer(method) {
         console.log('defer called: ', count++);
-       try {
+        try {
             if (Ayoba && Ayoba.hasOwnProperty('getMsisdn') && Ayoba.getMsisdn()) {
-            console.log('Ayoba loaded...');
-            method();
-        } else {
-            console.log('Ayoba not read yet...');
-            setTimeout(function () {
-                defer(method)
-            }, 50);
+                console.log('Ayoba loaded...');
+                method();
+            } else {
+                console.log('Ayoba not read yet...');
+                setTimeout(function () {
+                    defer(method)
+                }, 50);
+            }
+        } catch (e) {
+            console.log('An error occurred', e.message);
         }
-       } catch (e) {
-           console.log('An error occurred', e.message);
-       }
     }
 
     function onPresenceChanged(presence) {
         console.log("Event: presence changed:" + presence)
+        defer(function () {
+            function getMsisdn() {
+                var msisdn = Ayoba.getMsisdn();
+                var input = document.querySelector('#cellphone');
+                input.value = msisdn;
+            }
+
+
+            console.log(Object.getOwnPropertyNames(Ayoba).join(', '))
+            console.log('Msisdn: ');
+            console.log(Ayoba.getMsisdn())
+            getMsisdn();
+        })
     }
-
-    // defer(function () {
-    //     function getMsisdn() {
-    //         var msisdn = Ayoba.getMsisdn();
-    //         var input = document.querySelector('#cellphone');
-    //         input.value = msisdn;
-    //     }
-    //
-    //
-    //     console.log(Object.getOwnPropertyNames(Ayoba).join(', '))
-    //     console.log('Msisdn: ');
-    //     console.log(Ayoba.getMsisdn())
-    //     getMsisdn();
-    // })
-
 </script>
 </body>
 </html>
