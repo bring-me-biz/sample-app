@@ -13,7 +13,7 @@
             flex-direction: column;
         }
     </style>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
     <script src="static.js"></script>
 
 </head>
@@ -40,22 +40,28 @@
 
     <br>
     <label>Income Level</label>
-    <input id="under3500" type="radio" name="incomeLevel" value="<3500">
-    <label for="under3500">Less than R3500</label>
+    <div class="radio-input">
+        <input class="radio" id="under3500" type="radio" name="incomeLevel" value="<3500" required>
+        <label class="radio-label" for="under3500">Less than R3500</label>
+    </div>
 
-    <input id="between3000And6000" type="radio" name="incomeLevel" value="3500to6000">
-    <label for="between3000And6000">Between R3500 and R6000</label>
+    <div class="radio-input">
+        <input class="radio" id="between3000And6000" type="radio" name="incomeLevel" value="3500to6000">
+        <label class="radio-label" for="between3000And6000">Between R3500 and R6000</label>
+    </div>
 
-    <input id="moreThan6000" type="radio" name="incomeLevel" value=">6000">
-    <label for="moreThan6000">More than R6000</label>
-
+    <div class="radio-input">
+        <input class="radio" id="moreThan6000" type="radio" name="incomeLevel" value=">6000">
+        <label class="radio-label" for="moreThan6000">More than R6000</label>
+    </div>
     <br>
     <br>
     <input type="checkbox" id="contact" name="contactAgree" required><label for="contact">I agree to be contacted
     with more information from a 1Life Consultant.</label>
     <br>
     <br>
-    <input type="checkbox" id="tAndCs" name="tAndCsAgree" required><label for="tAndCs">I agree toTerms and Conditions and Privacy
+    <input type="checkbox" id="tAndCs" name="tAndCsAgree" required><label for="tAndCs">I agree toTerms and Conditions
+    and Privacy
     Policy.</label>
     <br>
     <br>

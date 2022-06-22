@@ -55,3 +55,16 @@ button {
     left: 50%;
     transform: translateX(-50%);
 }
+
+.radio {
+    display: inline;
+}
+
+.radio-label {
+    display: inline;
+}
+
+.radio-input {
+    display: flex;
+    flex-direction: row;
+}
