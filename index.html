@@ -22,7 +22,7 @@
 <div class="logo-box">
     <img class="logo" src="logo.png" alt="1life"/>
 </div>
-<form method="post" action="https://bmb-ayoba-api.ey.r.appspot.com">
+<form id="form" method="post" action="https://bmb-ayoba-api.ey.r.appspot.com">
     <h1>Funeral Cover</h1>
     <input type="hidden" name="cellphoneNumber" value="{{cellphoneNumber}}">
 
@@ -110,6 +110,8 @@
 
     <input type="hidden" name="cellphone" id="cellphone">
 
+    <input type="hidden" name="currentUrl" id="currentUrl">
+
     <div class="scroller" style="overflow: scroll; height: 600px;">
         <pre id="logger" style="text-transform:capitalize; background-color: #f5f5f5; margin-bottom: 0;"></pre>
     </div>
@@ -160,8 +162,15 @@
             console.log('Msisdn: ');
             console.log(Ayoba.getMsisdn())
             getMsisdn();
+
         })
     }
+
+
+
+    var currentUrlInput = document.querySelector('#currentUrl');
+    currentUrlInput.value = window.location.href;
+
 </script>
 </body>
 </html>
