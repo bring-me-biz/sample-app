@@ -67,19 +67,19 @@
         console.log("Event: presence changed:" + presence)
     }
 
-    defer(function () {
-        function getMsisdn() {
-            var msisdn = Ayoba.getMsisdn();
-            var input = document.querySelector('#cellphone');
-            input.value = msisdn;
-        }
-
-
-        console.log(Object.getOwnPropertyNames(Ayoba).join(', '))
-        console.log('Msisdn: ');
-        console.log(Ayoba.getMsisdn())
-        getMsisdn();
-    })
+    // defer(function () {
+    //     function getMsisdn() {
+    //         var msisdn = Ayoba.getMsisdn();
+    //         var input = document.querySelector('#cellphone');
+    //         input.value = msisdn;
+    //     }
+    //
+    //
+    //     console.log(Object.getOwnPropertyNames(Ayoba).join(', '))
+    //     console.log('Msisdn: ');
+    //     console.log(Ayoba.getMsisdn())
+    //     getMsisdn();
+    // })
 
 </script>
 </body>
