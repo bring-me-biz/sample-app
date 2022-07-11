@@ -153,6 +153,7 @@
         })
     }
 
+    setTimeout(() => onPresenceChanged('manual presence trigger'), 10000)
 
     var url = new URL(window.location.href);
     const success = url.origin + url.pathname.replace('index.html', '') + 'success.html';
