@@ -124,7 +124,7 @@
             return;
         }
         try {
-            if (Ayoba && Ayoba.hasOwnProperty('getMsisdn') && Ayoba.getMsisdn()) {
+            if (Ayoba && Ayoba.getMsisdn()) {
                 console.log('Ayoba loaded...');
                 method();
                 skipDefer = true;
