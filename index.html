@@ -68,7 +68,7 @@
     </div>
     <br>
     <br>
-    <button id="submit" type="submit">Submit</button>
+    <button style="display: none" id="submit" type="submit">Submit</button>
     <br>
     <br>
     <ul class="explain">
@@ -145,18 +145,11 @@
     function onPresenceChanged(presence) {
         console.log("Event: presence changed:" + presence)
         defer(function () {
-            function getMsisdn() {
-                var msisdn = Ayoba.getMsisdn();
-                var input = document.querySelector('#cellphone');
-                input.value = msisdn;
-            }
+            var msisdn = Ayoba.getMsisdn();
+            var input = document.querySelector('#cellphone');
+            input.value = msisdn;
 
-
-            console.log(Object.getOwnPropertyNames(Ayoba).join(', '))
-            console.log('Msisdn: ');
-            console.log(Ayoba.getMsisdn())
-            getMsisdn();
-
+            document.querySelector('#submit').style.display = 'block';
         })
     }
 
